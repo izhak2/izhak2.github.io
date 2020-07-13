@@ -1,14 +1,14 @@
 var express = require('express')
 var tex2max = require("tex2max")
+const converter = new tex2max();
 
 var app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
-//app.use(express.static(__dirname + '/'))
-app.get('/test.html', function(req, res) {
-  const converter = new tex2max();
-  res.render(__dirname + "/test.html", {converter:converter});
+
+app.get(app.use(express.static(__dirname + '/')), function(req, res) {
+  res.render(__dirname + "test.html", {converter:converter});
 });
 
 
