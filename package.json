@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "express": "^4.13.3",
-    "tex2max": "^1.3.0"
+    "tex2max": "^1.3.0",
+    "handlebars": "^4.7.6"
   },
   "engines": {
     "node": "4.0.0"
