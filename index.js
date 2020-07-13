@@ -3,9 +3,8 @@ var express = require('express');
 var exphbs  = require('express-handlebars');
 var tex2max = require("tex2max")
 
-app.set('port', (process.env.PORT || 5000))
-
 var app = express();
+app.set('port', (process.env.PORT || 5000))
 var hbs = exphbs.create({
     // Specify helpers which are only registered on this instance.
     helpers: {
