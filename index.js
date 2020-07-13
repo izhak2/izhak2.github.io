@@ -2,6 +2,8 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var tex2max = require("tex2max")
+const converter = new tex2max();
+
 
 var app = express();
 app.set('port', (process.env.PORT || 5000))
@@ -22,7 +24,7 @@ app.get('/', function (req, res, next) {
 
         // Override `foo` helper only for this rendering.
         helpers: {
-            foo: function () { return 'foo.'; }
+            foo: function () { return converter; }
         }
     });
 });
