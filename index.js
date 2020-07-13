@@ -4,7 +4,6 @@ var exphbs  = require('express-handlebars');
 var tex2max = require("tex2max")
 
 var app = express();
-
 var hbs = exphbs.create({
     // Specify helpers which are only registered on this instance.
     helpers: {
@@ -13,8 +12,8 @@ var hbs = exphbs.create({
     }
 });
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.set('view engine', '.hbs');
 
 app.get('/', function (req, res, next) {
     res.render('home', {
