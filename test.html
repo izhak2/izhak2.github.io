@@ -3,7 +3,6 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-<script src="tex2max.js"></script>
 <h3 class="p-3"> Convert Latex to Maxima</h3>
 <div class="pl-5 pr-5 form-group">
 	<input class="form-control" type="text" name="latex" placeholder="Insert you Latex label here:" />
@@ -14,8 +13,7 @@
 	window.convert = function (){
 		var x = document.getElementsByName('latex')[0].value;
 		console.info(x);
-		const TeX2Max = window.tex2max;
-		const converter = new TeX2Max();
+		var converter = "<%= converter %>";
 		var y = converter.toMaxima(x);
 		document.getElementsByName('maxima')[0].innerHTML  = y; 
 	}
