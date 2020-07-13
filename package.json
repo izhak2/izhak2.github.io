@@ -1,7 +1,23 @@
 {
-  "name": "my_package",
-  "version": "1.0.0",
-  "dependencies": {
-    "tex2max": "^1.3.0"
-  }
+	"name": "my_package",
+	"description": "",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+	"type": "git",
+	"url": "https://github.com/izhak2/latex2maxima.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/izhak2/latex2maxima/issues"
+	},
+	"dependencies": {
+		"tex2max": "^1.3.0"
+	}
+	"homepage": "https://github.com/izhak2/latex2maxima/my_package"
 }
