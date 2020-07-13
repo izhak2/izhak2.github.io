@@ -1,4 +1,6 @@
 var express = require('express')
+var TeX2Max = require('tex2max');
+const converter = new TeX2Max();
 var app = express()
 
 app.set('port', (process.env.PORT || 5000))
