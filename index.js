@@ -21,11 +21,6 @@ app.get('/', function (req, res, next) {
     res.locals.converter = new tex2max();
     res.render('home', {
         showTitle: true,
-
-        // Override `foo` helper only for this rendering.
-        helpers: {
-            foo: function () { return converter; }
-        }
     });
 });
 
