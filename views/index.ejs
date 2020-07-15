@@ -16,11 +16,11 @@
         require('index.js')
         window.convert = function (){
             var x = document.getElementsByName('latex')[0].value;
-            var converter = <%= tex2max %>
+            const TeX2Max = window.tex2max;
+            const converter = new TeX2Max(options);
             var y = converter.toMaxima(x);
             document.getElementsByName('maxima')[0].innerHTML  = y; 
         }
 </script>
-<script src="https://unpkg.com/tex2max@1.3.0/lib/tex2max.js"></script>
 </body>
 </html>
