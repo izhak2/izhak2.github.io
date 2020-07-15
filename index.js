@@ -1,6 +1,5 @@
 
 var express = require('express');
-var exphbs  = require('express-handlebars');
 var tex2max = require("tex2max")
 const converter = new tex2max();
 
