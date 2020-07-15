@@ -13,9 +13,9 @@
         <label class="form-control bg-light text-dark"  disabled="disabled" name="maxima" ></label>
     </div>
     <script>
-        <% var converter = converter; %>
         window.convert = function (){
             var x = document.getElementsByName('latex')[0].value;
+            var converter = <%= converter %>;
             var y = converter.toMaxima(x);
             document.getElementsByName('maxima')[0].innerHTML  = y; 
         }
