@@ -9,11 +9,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-exports.index = function(res, req) {
-    res.render('index', {tex2max: tex2max})
-}
 app.get('/', function (req, res, next) {
-    res.render('index', {tex2max: tex2max});
+    res.render('index', {tex2max: JSON.stringify(tex2max)});
 });
 
 app.listen(app.get('port'), function() {
