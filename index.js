@@ -10,8 +10,11 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 exports.index = function(res, req) {
-    res.render('index', {tex2max: tex2max});
+    res.render('index', {tex2max: tex2max})
 }
+app.get('/', function (req, res, next) {
+    res.render('index', {tex2max: tex2max});
+});
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
