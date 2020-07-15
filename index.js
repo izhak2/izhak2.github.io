@@ -7,7 +7,7 @@ app.set('port', (process.env.PORT || 5000))
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res, next) {
-    res.render('index', {tex2max: tex2max});
+    res.render('index', {tex2max: new tex2max()});
 });
 
 app.listen(app.get('port'), function() {
