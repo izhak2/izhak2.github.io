@@ -15,7 +15,8 @@
     <script>
         window.convert = function (){
             var x = document.getElementsByName('latex')[0].value;
-            const converter = <%= tex2max %>;
+            const TeX2Max = <%= tex2max %>;
+            const converter = new TeX2Max();
             var y = converter.toMaxima(x);
             document.getElementsByName('maxima')[0].innerHTML  = y; 
         }
