@@ -1,6 +1,7 @@
 
 var express = require('express');
-var tex2max = require("tex2max")
+var tex2max = require("tex2max");
+var amdloader = require("amd-loader");
 const bodyParser = require('body-parser');
 
 var app = express();
