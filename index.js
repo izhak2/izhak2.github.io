@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res, next) {
-    res.render('index', { nodeConverter: converter });
+    res.render('index', { nodeConverter: JSON.stringify(converter) });
 });
 
 app.listen(app.get('port'), function() {
