@@ -2,26 +2,16 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
 var tex2max = require("tex2max")
-
+const converter = new tex2max();
 
 var app = express();
 app.set('port', (process.env.PORT || 5000))
-var hbs = exphbs.create({
-    // Specify helpers which are only registered on this instance.
-    helpers: {
-        foo: function () { return 'FOO!'; },
-        bar: function () { return 'BAR!'; }
-    }
-});
-
-app.engine('.hbs', exphbs({extname: '.hbs'}));
-app.set('view engine', '.hbs');
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 app.get('/', function (req, res, next) {
-    res.locals.converter = new tex2max();
-    res.render('home', {
-        showTitle: true,
-    });
+    res.render('index', { converter: converter });
 });
 
 app.listen(app.get('port'), function() {
