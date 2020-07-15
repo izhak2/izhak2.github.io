@@ -6,6 +6,7 @@
     <title>Example App - Home</title>
 </head>
 <body class="container">
+    <script src="tex2max.js"></script>
     <h3 class="p-3"> Convert Latex to Maxima</h3>
     <div class="pl-5 pr-5 form-group">
         <input class="form-control" type="text" name="latex" placeholder="Insert you Latex label here:" />
@@ -15,7 +16,7 @@
     <script>
         window.convert = function (){
             var x = document.getElementsByName('latex')[0].value;
-            const converter = <%= JSON.stringify(converter) %>;
+            const converter = <%= converter %>;
             var y = converter.toMaxima(x);
             document.getElementsByName('maxima')[0].innerHTML  = y; 
         }
