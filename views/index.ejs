@@ -16,9 +16,7 @@
         <% var converter = converter; %>
         window.convert = function (){
             var x = document.getElementsByName('latex')[0].value;
-            console.info(x);
-            var get_converter = {{converter}};
-            var y = get_converter.toMaxima(x);
+            var y = converter.toMaxima(x);
             document.getElementsByName('maxima')[0].innerHTML  = y; 
         }
 </script>
