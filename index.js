@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res, next) {
+    console.log(converter);
     res.render('index', { converter: converter });
 });
 
