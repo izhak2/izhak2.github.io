@@ -16,7 +16,7 @@
     <script>
         window.convert = function (){
             var x = document.getElementsByName('latex')[0].value;
-            const converter = JSON.parse(<%= converter %>);
+            const converter = <%- JSON.stringify(converter) %>;
             var y = converter.toMaxima(x);
             document.getElementsByName('maxima')[0].innerHTML  = y; 
         }
