@@ -18,7 +18,6 @@
             $("#submit").click(function(){
                 latex_data = $("#latex_data").val();
                 $.post("translate",{latex_data: latex_data}, function(data){
-                    alert(data);
                     document.getElementsByName('maxima')[0].innerHTML  = data; 
                 });
             });
