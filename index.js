@@ -12,7 +12,7 @@ app.get('/', function (req, res, next) {
 });
 
 app.post('/translate', function (req, res) {
-    console.log(res);
+    console.log(req.body);
     var latex_data = JSON.parse( req.body.latex_data );
     var maxima_data = converter.toMaxima(latex_data);
     console.log( latex_data, maxima_data );
