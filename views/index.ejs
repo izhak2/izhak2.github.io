@@ -18,7 +18,7 @@
             $("#submit").click(function(){
                 latex_data = JSON.stringify($("#latex_data").val());
                 $.post("translate",{latex_data: latex_data}, function(data){
-                    document.getElementsByName('maxima')[0].innerHTML  = JSON.pare(data); 
+                    document.getElementsByName('maxima')[0].innerHTML  = JSON.parse(data); 
                 });
             });
         });
