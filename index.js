@@ -16,7 +16,7 @@ app.post('/translate', function (req, res) {
       var maxima_data = converter.toMaxima(latex_data);
       console.log( latex_data, maxima_data );
       res.end( JSON.stringify(maxima_data));
-};
+});
 
 
 app.listen(app.get('port'), function() {
