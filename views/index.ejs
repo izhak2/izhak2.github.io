@@ -9,17 +9,21 @@
     <script src="tex2max.js"></script>
     <h3 class="p-3"> Convert Latex to Maxima</h3>
     <div class="pl-5 pr-5 form-group">
-        <input class="form-control" type="text" name="latex" placeholder="Insert you Latex label here:" />
-        <button class="mt-3 mb-3 btn btn-primary" onclick="convert()"> Convert To Maxima </button>
-        <label class="form-control bg-light text-dark"  disabled="disabled" name="maxima" ></label>
+        <input id="latex_data" class="form-control" type="text" name="latex" placeholder="Insert you Latex label here:" />
+        <button id="submit" class="mt-3 mb-3 btn btn-primary""> Convert To Maxima </button>
+        <label id="maxima_data" class="form-control bg-light text-dark"  disabled="disabled" name="maxima" ></label>
     </div>
     <script>
-        window.convert = function (){
-            var x = document.getElementsByName('latex')[0].value;
-            const converter = <%- JSON.stringify(converter) %>;
-            var y = converter.toMaxima(x);
-            document.getElementsByName('maxima')[0].innerHTML  = y; 
-        }
+        $(document).ready(function(){
+        var user,pass;
+        $("#submit").click(function(){
+          latex_data = JSON.stringify($("#latex_data").val());
+          $.post("translate",{latex_data: latex_data}, function(data){
+                alert(data);
+                document.getElementsByName('maxima')[0].innerHTML  = data; 
+              });
+            };
+        };
 </script>
 </body>
 </html>
