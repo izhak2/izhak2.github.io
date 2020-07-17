@@ -16,9 +16,9 @@
     <script>
         $(document).ready(function(){
             $("#submit").click(function(){
-                latex_data = $("#latex_data").val();
+                latex_data = JSON.stringify($("#latex_data").val());
                 $.post("translate",{latex_data: latex_data}, function(data){
-                    document.getElementsByName('maxima')[0].innerHTML  = data; 
+                    document.getElementsByName('maxima')[0].innerHTML  = JSON.pare(data); 
                 });
             });
         });
