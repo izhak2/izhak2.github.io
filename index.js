@@ -17,11 +17,9 @@ app.get('/', function (req, res, next) {
 });
 
 app.post('/translate', function (req, res) {
-    console.log(req.body);
-    var latex_data = JSON.parse( req.body.latex_data );
+    var latex_data = req.body.latex_data;
     var maxima_data = converter.toMaxima(latex_data);
-    console.log( latex_data, maxima_data );
-    res.end( JSON.stringify(maxima_data));
+    res.end(maxima_data);
 });
 
 
